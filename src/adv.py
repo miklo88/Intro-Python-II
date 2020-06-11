@@ -33,13 +33,25 @@ room['overlook'].s_to = room['foyer']
 room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
-print(roomtype)
-print(player1)
+
+
 #
 # Main
 #
 
 # Make a new player object that is currently in the 'outside' room.
+
+# class test that data is flowing.
+# print(type(room)) #dictionary data type.
+# print(room.keys()) # getting keys LIST of room name 
+# print(room.values()) # getting values LIST of objects 
+print(room['foyer'])# returns name and description.
+print(room['outside'])# returns name and description.
+print(room['overlook'])# returns name and description.
+print(room['narrow'])# returns name and description.
+print(room['treasure'])# returns name and description.
+
+# print(player)
 
 # Write a loop that:
 #
