@@ -1,10 +1,11 @@
 # Write a class to hold player information, e.g. what room they are in
 # currently.
+#figure out a way to establish current room and how to store that state.
 class Player:
     def __init__(self, current_room):
         self.current_room = current_room
     
-
+# figure out a way to add and subract hp from player object for my own stretch goal purposes.
 class Attributes(Player):
     def __init__(self, name, hp, current_room):
         super().__init__(current_room)
