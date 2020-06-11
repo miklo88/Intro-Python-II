@@ -48,9 +48,6 @@ print(instructions)
 #Evaluate your code (to work out what I mean)
 # chosen_path = 
 #Print any results (so you can see the comps response)
-# print(chosen_path)
-# print(direction_choice)
-#Loop back to step 1 (continue the conversation)
 
 # room['outside'].n_to = room['foyer']
 # room['foyer'].s_to = room['outside']
@@ -72,49 +69,43 @@ treasure.s_to = narrow
 # Main
 #
 # Make a new player object that is currently in the 'outside' room.
-# print(room['outside'])
 player = Player()
 player.current_room = outside
 # Write a loop that:
 while True:
     # * Prints the current room name
-    print(player.current_room)
-    # print(player.current_room.name)
+    print(player.current_room.name)
     # * Prints the current description (the textwrap module might be useful here).
-    # print(player.current_room.description)
+    print(f'The room is {player.current_room.description}')
     # * Waits for user input and decides what to do.
     input_var = input("submit a command: " )
     # If the user enters a cardinal direction, attempt to move to the room there.
-    # Print an error message if the movement isn't allowed.
-    #
     # If the user enters "q", quit the game.
     if input_var == 'n':
-        #check if the current rooms has a n_to attribute
+        # check if the current room has a n_to attribute
         if player.current_room.n_to is not None:
-         #move the player to that room
-            player.current_room == player.current_room.n_to
+            # move the player to that room
+            player.current_room = player.current_room.n_to
+
     elif input_var == 's':
         if player.current_room.s_to is not None:
             #move the player to that room
-            player.current_room == player.current_room.s_to
+            player.current_room = player.current_room.s_to
+
     elif input_var == 'e':
         if player.current_room.e_to is not None:
             #move the player to that room
-            player.current_room == player.current_room.e_to
+            player.current_room = player.current_room.e_to
+
     elif input_var == 'w':
         if player.current_room.w_to is not None:
             #move the player to that room
-            player.current_room == player.current_room.w_to
+            player.current_room = player.current_room.w_to
 #to break out of the game
     elif input_var == 'q':
         print(f'The quest has ended.') 
         break
-# #for any commands other than n, s, e, w
-#     elif input_var != 'n, s, e, w':
-#         print('Wrong command, try again')
+        # Print an error message if the movement isn't allowed.
+# for any wrong input 
     else:
         print('Wrong command, try again')
-#to break out of the game
-# elif input_var == 'q'
-#elif q:
-    # break
