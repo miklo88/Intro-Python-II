@@ -1,6 +1,5 @@
 from room import Room
 from player import Player
-
 # Declare all the rooms
 #room dictionary with attributes/properites of name and description.
 # room = {
@@ -85,7 +84,7 @@ while True:
         # check if the current room has a n_to attribute
         if player.current_room.n_to is not None:
             # move the player to that room
-            player.current_room = player.current_room.n_to
+            player.current_room = player.current_room.n_to 
 
     elif input_var == 's':
         if player.current_room.s_to is not None:
