@@ -1,5 +1,17 @@
 from room import Room
 from player import Player
+from item import Item
+#All the items
+candybar = Item("snickers",
+"might as well eat it so you dont get hangry.")
+notebook = Item("notebook",
+"spillin the tea.")
+vase = Item("vase",
+"there seems to be a map drawn on this this vase.")
+staff = Item("staff",
+"enable gandalf mode.")
+candlestick = Item("candlestick",
+"save for the darkest of times.")
 # Declare all the rooms
 #room dictionary with attributes/properites of name and description.
 # room = {
@@ -16,23 +28,24 @@ from player import Player
 # chamber! Sadly, it has already been completely emptied by
 # earlier adventurers. The only exit is to the south."""),
 # }
-# #room variables
+# #room variables #add items to rooms
 outside = Room("Outside Cave Entrance",
-"North of you, the cave mount beckons")
+"North of you, the cave mount beckons")(candlestick)
 
 foyer = Room("Foyer", """Dim light filters in from the south. Dusty
-passages run north and east.""")
+passages run north and east.""")(vase)
 
 overlook = Room("Grand Overlook", """A steep cliff appears before you, falling
 into the darkness. Ahead to the north, a light flickers in
-the distance, but there is no way across the chasm.""")
+the distance, but there is no way across the chasm.""")(candybar)
 
 narrow = Room("Narrow Passage", """The narrow passage bends here from west
-to north. The smell of gold permeates the air.""")
+to north. The smell of gold permeates the air.""")(notebook)
 
 treasure = Room("Treasure Chamber", """You've found the long-lost treasure
 chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south.""")
+earlier adventurers. The only exit is to the south.""")(staff)
+
 #welcome instructions
 instructions = """Welcome to find the treasure! As a player you will navigate multiple rooms using the cardinal
 directions n for north, s for south, e for east, w for west to find the treasure!"""
@@ -62,6 +75,9 @@ treasure.s_to = narrow
 #
 # Main
 #
+# # making a items object
+# item = Items()
+# item.current_room = items
 # Make a new player object that is currently in the 'outside' room.
 player = Player()
 player.current_room = outside
@@ -69,10 +85,11 @@ player.current_room = outside
 while True:
     # * Prints the current room name
     print(player.current_room.name)
+    # print(item.current_room.item_name)
     # * Prints the current description (the textwrap module might be useful here).
     print(f'The room is {player.current_room.description}')
     # * Waits for user input and decides what to do.
-    input_var = input("submit a command: " )
+    input_var = input("Where will you go? (n,s,e,w)?: " )
     # If the user enters a cardinal direction, attempt to move to the room there.
     # If the user enters "q", quit the game.
     if input_var == 'n':
