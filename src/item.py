@@ -5,12 +5,12 @@ class Item:
     
     def __str__(self):
         #need to figure how to add the item and know which player has item.
-       return f'Uuuu {self.item_name}: {self.item_description}'
+       return f'{self.item_name}: {self.item_description}'
         
 
 
 
 
 
-# newitem = Inventory('hammer', 'really old', 1, 'current player')
+# newitem = Item('hammer', 'really old')
 # print(newitem)
