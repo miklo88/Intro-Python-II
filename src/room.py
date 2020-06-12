@@ -3,14 +3,15 @@
 # Implement a class to hold room information. This should have name and
 # description attributes.
 class Room:
-    def __init__(self, name, description, items=None):
+    def __init__(self, name, description, items=[]):
         self.name = name
         self.description = description
-        self.items = []
+        self.items = None
         self.n_to = None
         self.s_to = None
         self.e_to = None 
         self.w_to = None
+        self.add_items = items
     #room name and description from obj to str func also added items concatentation
     def __str__(self):
         output = f'{self.name}: {self.description}: {self.items} \n'
@@ -25,8 +26,10 @@ class Room:
         if self.w_to:
             output += 'To the west is: ' + self.w_to.name + '\n'
             # + 'Hey look!: ' + self.items
-
         return output
+
+    def add_items(self):
+        return self.items.append()
 
 # # #test
 # room = Room('Abuelas', 'jamon the best smell in the world', '!mirame croquetas!')

@@ -9,7 +9,6 @@ items = {
     # 'vase': Item("vase", "there seems to be a map drawn on this this vase."),
     # 'staff': Item("staff", "enable gandalf mode."),
     # 'candlestick': Item("candlestick", "save for the darkest of times."),
-# print(items['candybar'])
 # Declare all the rooms
 #room dictionary with attributes/properites of name and description.
 room = {
@@ -26,36 +25,14 @@ to north. The smell of gold permeates the air."""),
 chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south."""),
 }
-# print(room['outside']['candybar'])
-# #room variables #add items to rooms
-# outside = Room("Outside Cave Entrance",
-# "North of you, the cave mount beckons")
-
-# foyer = Room("Foyer", """Dim light filters in from the south. Dusty
-# passages run north and east.""")
-
-# overlook = Room("Grand Overlook", """A steep cliff appears before you, falling
-# into the darkness. Ahead to the north, a light flickers in
-# the distance, but there is no way across the chasm.""")
-
-# narrow = Room("Narrow Passage", """The narrow passage bends here from west
-# to north. The smell of gold permeates the air.""")
-
-# treasure = Room("Treasure Chamber", """You've found the long-lost treasure
-# chamber! Sadly, it has already been completely emptied by
-# earlier adventurers. The only exit is to the south.""")
-
 #welcome instructions
 instructions = """Welcome to find the treasure! As a player you will navigate multiple rooms using the cardinal
 directions n for north, s for south, e for east, w for west to find the treasure!"""
 print(instructions)
 #cardinal direction choice
-#Read the user input (The python commmands)
-# direction_choice = input(f'Begin your quest now: ')
-#Evaluate your code (to work out what I mean)
-# chosen_path = 
 #Print any results (so you can see the comps response)
 room['outside'].n_to = room['foyer']
+room['outside'].add_items(items['candybar'])
 room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']
 room['overlook'].s_to = room['foyer']
@@ -63,24 +40,16 @@ room['foyer'].e_to = room['narrow']
 room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
-# outside.n_to = foyer
-# foyer.s_to = outside
-# foyer.n_to = overlook
-# overlook.s_to = foyer
-# foyer.e_to = narrow
-# narrow.w_to = foyer
-# narrow.n_to = treasure
-# treasure.s_to = narrow
 #
 # Main
 #
 # # making a items object
-
 # Make a new player object that is currently in the 'outside' room.
 player = Player()
 player.current_room = room['outside']
-# item = Room()
-room['outside'].items.append(items['candybar'])
+# room['outside'].items.append(items['candybar'])
+item = Item()
+
 # Write a loop that:
 while True:
     # * Prints the current room name
