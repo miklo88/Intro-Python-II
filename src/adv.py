@@ -29,10 +29,11 @@ earlier adventurers. The only exit is to the south."""),
 instructions = """Welcome to find the treasure! As a player you will navigate multiple rooms using the cardinal
 directions n for north, s for south, e for east, w for west to find the treasure!"""
 print(instructions)
+
 #cardinal direction choice
 #Print any results (so you can see the comps response)
 room['outside'].n_to = room['foyer']
-room['outside'].add_items(items['candybar'])
+room['outside'].add_items(items)
 room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']
 room['overlook'].s_to = room['foyer']
@@ -47,8 +48,9 @@ room['treasure'].s_to = room['narrow']
 # Make a new player object that is currently in the 'outside' room.
 player = Player()
 player.current_room = room['outside']
-# room['outside'].items.append(items['candybar'])
-item = Item()
+
+# items = Item()
+
 
 # Write a loop that:
 while True:
